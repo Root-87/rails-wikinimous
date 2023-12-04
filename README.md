@@ -45,6 +45,7 @@ Le fichier `lib/coach_answer.rb` contient la définition de la méthode pour `co
 Nous allons maintenant créer une version améliorée de ton coach avec la méthode `coach_answer_enhanced`. Si tu t’adresses à ton coach **EN CRIANT**, il appréciera et ajoutera `“I can feel your motivation!”` avant sa réponse habituelle. Souviens-toi que pour crier sur Internet, il faut écrire en **MAJUSCULES** ! Et si tu cries `“I AM GOING TO WORK RIGHT NOW!”`, alors ton coach te laissera tranquille.
 
 **Programme interactif**
+  
   • Écris le code qui te permettra d’interagir avec ton coach par l’intermédiaire du terminal.
   
   • **contrainte** : Ce programme doit s’exécuter en **boucle**. Ton coach doit répondre à ton message et attendre le suivant jusqu’à ce que tu décides de t’en débarrasser. Utilise `while..end` ou `until..end` pour cela.
