@@ -1,67 +1,74 @@
-# README
+## Background and Objectives
 
-Dans cet exercice, on va créer ton propre coach personnel.
-Malheureusement, ton coach est un peu stupide et uniquement capable de se comporter de la façon suivante :
+In this exercise, we will create your own personal coach.
+Unfortunately though, the coach is a little stupid and can only exhibit the following behavior:
 
-  1. Si tu te contentes de lui dire au lieu de lui demander quelque chose (exemple : `"I met a girl last night"`), ton coach répondra simplement `"I don’t care, get dressed and go to 
-     work!"`
-  2. Si tu lui poses une question (exemple : `"Can I eat some pizza?"`), ton coach ne sera pas d’une grande aide non plus et te répondra `"Silly question, get dressed and go to work!"`
-  3. La seule façon de te débarrasser de ton coach est de lui dire ce qu’il a envie d’entendre : `"I am going to work right now!"`.
+1. If you don't **ask** her/him something, but just **tell** her/him something (e.g. `"I met a girl last night"`), she/he will just answer back `"I don't care, get dressed and go to work!"`
+2. If you ask her/him something (e.g. `"Can I eat some pizza?"`), she/he won't be of much help either and she/he will tell you `"Silly question, get dressed and go to work!"`
+3. The **only** way to get rid of her/him is to tell her/him what she/he wants to hear: `"I am going to work right now!"`.
 
-Comparons le **monde réel** et le **monde du code**.
+Let's make a comparison between the **real world** and the **code world** on this exercise.
 
-  • ***Monde réel*** : Réveil   
-***Monde du code*** : Exécuter `ruby lib/interface.rb` dans le terminal
-                                                     
-  • ***Monde réel*** : Parler à ton coach    
-***Monde du code*** : Écrire une string dans le terminal et appuyer sur Entrée
+<table class="table">
+  <thead>
+    <tr>
+      <th>Real world</th>
+      <th>Code world</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Waking up</td>
+      <td>Running <code>ruby lib/interface.rb</code> in the terminal</td>
+    </tr>
+    <tr>
+      <td>Speaking to your coach</td>
+      <td>Writing a string in the terminal and hitting Enter</td>
+    </tr>
+    <tr>
+      <td>Making your coach speak</td>
+      <td>Reading your coach's answer printed on the terminal with <code>puts</code></td>
+    </tr>
+    <tr>
+      <td>Asking a question</td>
+      <td>Writing a sentence ending with <code>?</code> and hitting Enter</td>
+    </tr>
+    <tr>
+      <td>Getting rid of your coach</td>
+      <td>Typing <code>"I am going to work right now!"</code>, hitting Enter. The program should exit.</td>
+    </tr>
+  </tbody>
+</table>
 
-  • ***Monde réel*** : Faire parler ton coach	   
-***Monde du code*** : Lire la réponse de ton coach imprimée sur le terminal avec `puts`
+The objectives of this challenge are:
+- Understand the **execution flow** of a program and learn how to "read" through your code, line by line
+- Learn about **conditional** statements
+- Learn about coding structures that modify your program flow: `if/unless..else..end`, `while/until..end`, etc. They are [control structures](https://en.wikipedia.org/wiki/Control_flow)
 
-  • ***Monde réel*** : Poser une question	   
-***Monde du code*** : Écrire une phrase se terminant par `?` et appuyer sur Entrée
+## Specs
 
-  • ***Monde réel*** : Te débarrasser de ton coach     
-***Monde du code*** : Saisir le `"I am going to work right now!"`, appuyer sur Entrée. Le programme doit se fermer.
+### Coach answer
 
-Les objectifs de cet exercice sont les suivants :
+⚠️ Before you start, please make sure to run `rake` and carefully read the requirements. It will give you a clear overview of what the expected output for both methods is.
 
-  • Comprendre le flux d’éxecution (**execution flow**) d’un programme et apprendre à « lire » dans ton code, ligne par ligne
+In the `lib/coach_answer.rb` file, you will find method definition of `coach_answer`. You can see that it takes one argument, `your_message` which is the sentence you tell the coach. The method should return a `String` (i.e., the coach's answer) which will obviously depend on which value is passed in `your_message`.
 
-  • Découvrir les **conditions**
+Now let's implement an enhanced version of the coach, with the method `coach_answer_enhanced`. If you **SHOUT** at your coach, she/he will like it, and will say: "I can feel your motivation!" before the regular answer. Remember that shouting on the Internet is done by writing in CAPS LOCK! However, if you shout "I AM GOING TO WORK RIGHT NOW!", your coach will leave you alone.
 
-  • Découvrir les structures de code qui permettent de modifier le flux d’exécution de ton programme : `if/unless..else..end, while/until..end`, etc. Ce sont des structures de contrôle
+### Interactive Program
 
+- Write the code for the interface that lets you talk to your coach via the terminal.
+- **constraint**: This program should **"loop"**. Your coach should answer your message and wait for your next one until you decide to get rid of him. Use a `while..end` or `until..end` structure for that purpose.
 
-**Spécifications**
+If you're getting stuck in an **infinite loop**, just hit `Ctrl` + `C`! It will kill the process.
 
-**Réponse de ton coach**
+⚠️ For this exercise you're not finished when `rake` is 100% green! You need to make sure that you can actually ask questions to your coach by running `ruby lib/interface.rb` 😉
 
-⚠️ Avant de commencer, assure-toi d’exécuter `rake` et de lire attentivement les spécifications. Ça te donnera une vision claire du résultat attendu pour chacune des méthodes.
+## Key learning points
 
-Le fichier `lib/coach_answer.rb` contient la définition de la méthode pour `coach_answer`. Cette méthode prend un argument, `your_message`, qui correspond à la phrase que tu dis à ton coach. La méthode doit retourner une `String` (à savoir la réponse de ton coach), qui dépendra de la valeur passée dans `your_message`.
+- What's the usual flow of a program?
+- How do structures like `if..else..end` or `while..end` change this flow?
+- How do these structures work?
+- What's a conditional statement? Which values can it take? What's the difference between `=` and `==`?
+- Does a simple method call change the flow of your program?
 
-Nous allons maintenant créer une version améliorée de ton coach avec la méthode `coach_answer_enhanced`. Si tu t’adresses à ton coach **EN CRIANT**, il appréciera et ajoutera `“I can feel your motivation!”` avant sa réponse habituelle. Souviens-toi que pour crier sur Internet, il faut écrire en **MAJUSCULES** ! Et si tu cries `“I AM GOING TO WORK RIGHT NOW!”`, alors ton coach te laissera tranquille.
-
-**Programme interactif**
-  
-  • Écris le code qui te permettra d’interagir avec ton coach par l’intermédiaire du terminal.
-  
-  • **contrainte** : Ce programme doit s’exécuter en **boucle**. Ton coach doit répondre à ton message et attendre le suivant jusqu’à ce que tu décides de t’en débarrasser. Utilise `while..end` ou `until..end` pour cela.
-
-Si tu te retrouves coincé dans une **boucle infinie**, appuie simplement sur `Ctrl` + `C` ! Le programme arrêtera de s’exécuter.
-
-⚠️ L’exercice n’est pas terminé que lorsque rake est complètement vert ! Tu dois aussi t’assurer de vraiment pouvoir poser des questions à ton coach en exécutant `ruby lib/interface.rb` 😉
-
-**Enseignements clés**
-  
-  • Quel est le flux d’éxecution (execution flow) habituel d’un programme ?
-  
-  • Comment des structures de type `if..else..end` or `while..end` modifient-elles ce flux ?
-  
-  • Comment ces structures fonctionnent-elles ?
-  
-  • Qu’est-ce qu’une condition ? Quelles valeurs peut-elle prendre ? Quelle est la différence entre `=` et `==` ?
-  
-  • Est-ce qu’un simple appel de méthode simple peut modifier le flux de ton programme ?
